@@ -29,3 +29,8 @@ dependencies {
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.11'
 }
+
+task execute(type: org.gradle.api.tasks.JavaExec, dependsOn: classes) {
+    main = 'MainApp'
+    classpath = sourceSets.main.runtimeClasspath
+}
